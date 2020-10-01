@@ -145,7 +145,7 @@ var AnnotatorUI = (function($, window, undefined) {
             $input.click();
           }
         }
-
+        
         if (!inForm && code == $.ui.keyCode.ENTER) {
           evt.preventDefault();
           tryToAnnotate(evt);
@@ -805,22 +805,26 @@ var AnnotatorUI = (function($, window, undefined) {
         if (span && !reselectedSpan) {
           $('#span_form_reselect, #span_form_delete, #span_form_add_fragment').show();
           keymap[$.ui.keyCode.DELETE] = 'span_form_delete';
+          keymap[$.ui.keyCode.BACKSPACE] = 'span_form_delete';
           keymap[$.ui.keyCode.INSERT] = 'span_form_reselect';
           keymap['S-' + $.ui.keyCode.ENTER] = 'span_form_add_fragment';
           $('#span_notes').val(span.annotatorNotes || '');
         } else {
           $('#span_form_reselect, #span_form_delete, #span_form_add_fragment').hide();
           keymap[$.ui.keyCode.DELETE] = null;
+          keymap[$.ui.keyCode.BACKSPACE] = null;
           keymap[$.ui.keyCode.INSERT] = null;
           keymap['S-' + $.ui.keyCode.ENTER] = null;
         }
         if (span && !reselectedSpan && span.offsets.length > 1) {
           $('#span_form_reselect_fragment, #span_form_delete_fragment').show();
           keymap['S-' + $.ui.keyCode.DELETE] = 'span_form_delete_fragment';
+          keymap['S-' + $.ui.keyCode.BACKSPACE] = 'span_form_delete_fragment';
           keymap['S-' + $.ui.keyCode.INSERT] = 'span_form_reselect_fragment';
         } else {
           $('#span_form_reselect_fragment, #span_form_delete_fragment').hide();
           keymap['S-' + $.ui.keyCode.DELETE] = null;
+          keymap['S-' + $.ui.keyCode.BACKSPACE] = null;
           keymap['S-' + $.ui.keyCode.INSERT] = null;
         }
         // TODO: lots of redundancy in the next two blocks, clean up
@@ -1622,6 +1626,7 @@ var AnnotatorUI = (function($, window, undefined) {
 
           $('#arc_form_reselect, #arc_form_delete').show();
           keymap[$.ui.keyCode.DELETE] = 'arc_form_delete';
+          keymap[$.ui.keyCode.BACKSPACE] = 'arc_form_delete';
           keymap[$.ui.keyCode.INSERT] = 'arc_form_reselect';
 
           var backTargetType = spanTypes[targetType];
