@@ -1,6 +1,13 @@
 /* -*- Mode: CSS; tab-width: 2; indent-tabs-mode: nil; -*- */
 /* vim:set ft=css ts=2 sw=2 sts=2 autoindent: */
 
+/*
+ * Andrew's additions
+ */
+tspan[data-repeated="false"] {
+  opacity: .5;
+}
+
 /* Styling for the user-interface */
 
 html {
@@ -171,6 +178,9 @@ input[data-value="multi"] {
   width: 1px;
 }
 
+#entity_and_event_wrapper {
+  max-height: 200px;
+}
 #span_form .collapser, #arc_form .collapser {
     float: left;
     height: 16px;
@@ -201,7 +211,7 @@ input[data-value="multi"] {
 
 /* BEGIN new entity and event dialog style */
 .split_wrapper {
-  height: 300px;
+  /* height: 300px; */
   /* HACK tweaking to avoid overflows. */
   padding-bottom: 2.5em;
   /* end HACK */

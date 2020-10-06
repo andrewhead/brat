@@ -2583,7 +2583,7 @@ var AnnotatorUI = (function($, window, undefined) {
 
       dispatcher.post('initForm', [spanForm, {
           alsoResize: '#entity_and_event_wrapper',
-          width: 760,
+        width: 400,
           buttons: [{
               id: 'span_form_add_fragment',
               text: "Add Frag.",

@@ -2028,7 +2028,7 @@ var VisualizerUI = (function($, window, undefined) {
 
       var init = function() {
         dispatcher.post('initForm', [viewspanForm, {
-            width: 760,
+          width: 400,
             no_cancel: true
           }]);
         dispatcher.post('ajax', [{
